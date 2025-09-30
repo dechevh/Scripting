@@ -1,0 +1,13 @@
+# Thresholds
+warn_days: 30    # Warning if cert expires in <=30 days
+crit_days: 7     # Critical if cert expires in <=7 days
+
+# Targets
+sites:
+  - host: google.com
+    port: 443
+  - host: expired.badssl.com
+    port: 443
+    sni: expired.badssl.com # Optional: used only if the TLS server hosts multiple domains.
+  - host: does-not-exist.example
+    port: 443
